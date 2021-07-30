@@ -1,0 +1,107 @@
+{
+    "ui": {
+        "administration": "Администрация",
+        "myPublications": "Моите публикации",
+        "myPublicationsShort": "Моите",
+        "searchPublications": "Търсене на публикации",
+        "searchPublicationsShort": "Търсене",
+        "createPublication": "Добавяне на публикация",
+        "createPublicationShort": "Добавяне",
+        "importPublications": "Импортиране на публикации",
+        "importPublicationsShort": "Импортиране",
+        "previewUsers": "Преглед на потребители",
+        "previewUsersShort": "Преглед",
+        "registerUsers": "Регистрация на потребители",
+        "registerUsersShort": "Регистрация",
+        "selectFile": "Избери файл",
+        "importSuccess": "Импортирането завърши успешно.",
+        "importButton": "Импортиране",
+        "addPublicationButton": "Добави",
+        "addPublicationSuccess": "Публикацията е добавена успешно.",
+        "chooseOption": "Избери опция",
+        "showFilters": "Покажи филтрация",
+        "hideFilters": "Скрий филтрация",
+        "search": "Търси",
+        "registerUser": "Регистрирай",
+        "userRegisteredSuccessfully": "Потребителят е регистриран успешно.",
+        "resetUserPassword": "Рестартирай парола",
+        "passwordResetSuccessfully": "Паролата беше рестартирана успешно.",
+        "yes": "Да",
+        "no": "Не",
+        "textCopied": "Копирано!",
+        "greetingUser": "Здравейте, {0}",
+        "login": "Вход",
+        "logout": "Изход",
+        "export": "Експортиране",
+        "publicationExportSuccess": "Публикациите са експортирани успешно.",
+        "loggingIn": "Вписване...",
+        "loggingOut": "Отписване...",
+        "loggedOut": "Вие успешно излязохте от профила си!"
+    },
+    "user": {
+        "fields": {
+            "username": "Потребителско име",
+            "email": "Имейл адрес",
+            "role": "Роля"
+        }
+    },
+    "publication": {
+        "createFields" : {
+            "publicationType": "Вид на публикацията",
+            "originalTitle": "Оригинално заглавие",
+            "yearPublished": "Година на издаване",
+            "publisherData": "Издателски данни",
+            "identifier": "ISBN/ISSN/DOI",
+            "primaryReferenceLocation": "Реферирана в Web of Science и/или Scopus",
+            "secondaryReferenceLocation": "Реферирана в ДРУГИ (за 4.6) съгалсно наредбата",
+            "tertiaryReferenceLocation": "Реферирана в ДРУГИ по списъка на НАЦИД",
+            "authorsAndCoAuthors": "Съавтори без титли (всички, както са подредени в публикацията, вкл. ВИЕ)",
+            "studentsAndDoctorants": "Имена на студенти и докторанти измежду съавторите",
+            "isiImpactFactor": "ISI импакт фактор",
+            "sjrScopusImpactRank": "SJR SCOPUS ИМПАКТ РАНГ",
+            "publicationLanguageCode": "Език на публикацията",
+            "publicationLink": "Връзка(линк) към онлайн публикацията"
+        },
+        "fields" : {
+            "publicationType": "Вид на публикацията",
+            "originalTitle": "Оригинално заглавие",
+            "yearPublished": "Година на издаване",
+            "publisherData": "Издателски данни",
+            "identifier": "ISBN/ISSN/DOI",
+            "primaryReferenceLocation": "Реферирана в Web of Science и/или Scopus",
+            "secondaryReferenceLocation": "Реферирана в ДРУГИ (за 4.6) съгалсно наредбата",
+            "tertiaryReferenceLocation": "Реферирана в ДРУГИ по списъка на НАЦИД",
+            "authorsAndCoAuthors": "Съавтори без титли",
+            "studentsAndDoctorants": "Имена на студенти и докторанти",
+            "isiImpactFactor": "ISI импакт фактор",
+            "sjrScopusImpactRank": "SJR SCOPUS ИМПАКТ РАНГ",
+            "publicationLanguageCode": "Език на публикацията",
+            "publicationLink": "Връзка към онлайн публикацията",
+            "bibliographyDescription": "Библиографско описание"
+        },
+        "validation": {
+            "typeNotSupported": "Публикации от тип '{0}' не се поддържат за момента.",
+            "yearPublishedInvalidRange": "Полето '{0}' трябва да има стойност между 1970 и {1}",
+            "invalidNamesFormatting": "Имената в полето '{0}' не са форматирани правилно.",
+            "publicationLanguageInvalidLength": "Полето '{0}' трябва да има дължина 2 символа.",
+            "alreadyExists": "Публикация с такова заглавие вече съществува и ще бъде презаписана."
+        },
+        "modal": {
+            "alreadyExists": "Публикация с такова заглавие вече съществува и ще бъде презаписана ако продължите. Желаете ли да продължите?",
+            "alreadyExistsImport": "Данните, които ще бъдат импортирани съдържат публикации със заглавия, които вече съществуват и ще бъдат презаписани ако продължите. Желаете ли да продължите?"
+        }
+    },
+    "validation": {
+        "required": "Полето '{0}' е задължително.",
+        "invalidEmail": "Имейл адресът е невалиден.",
+        "invalidUsername": "Полето '{0}' може да съдържа само букви на латиница и цифри."
+    },
+    "ExceptionType": {
+        "Unknown": "Възникна грешка.",
+        "ValidationFailed": "Възникна грешка при валидирането на заявката.",
+        "UserWithEmailAlreadyExists": "Вече съществува потребител с такъв имейл адрес.",
+        "UserCreationFailure": "Възникна грешка при създаването на потребителя.",
+        "RoleNotFound": "Използваната роля не съществува.",
+        "UnsupportedPublicationType": "Този тип публикация не се поддържа за момента."
+    }
+}

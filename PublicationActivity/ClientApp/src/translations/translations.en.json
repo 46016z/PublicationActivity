@@ -1,0 +1,106 @@
+{
+    "ui": {
+        "administration": "Administration",
+        "myPublications": "My Publications",
+        "myPublicationsShort": "My collection",
+        "searchPublications": "Search Publications",
+        "searchPublicationsShort": "Search",
+        "createPublication": "Create Publication",
+        "createPublicationShort": "Create",
+        "importPublications": "Import Publications",
+        "importPublicationsShort": "Import",
+        "previewUsers": "Preview Users",
+        "previewUsersShort": "Preview",
+        "registerUsers": "Register Users",
+        "registerUsersShort": "Register",
+        "selectFile": "Choose file",
+        "importSuccess": "Import completed successfully.",
+        "importButton": "Import",
+        "addPublicationButton": "Add",
+        "addPublicationSuccess": "Publication was added successfully.",
+        "chooseOption": "Choose an option",
+        "showFilters": "Show filters",
+        "hideFilters": "Hide filters",
+        "search": "Search",
+        "registerUser": "Register",
+        "userRegisteredSuccessfully": "The user was registered successfully.",
+        "resetUserPassword": "Reset Password",
+        "passwordResetSuccessfully": "Password was reset successfully.",
+        "yes": "Yes",
+        "no": "No",
+        "textCopied": "Copied!",
+        "greetingUser": "Hello {0}",
+        "login": "Login",
+        "logout": "Logout",
+        "export": "Export",
+        "publicationExportSuccess": "The publications were exported successfully.",
+        "loggingIn": "Logging in...",
+        "loggingOut": "Logging out...",
+        "loggedOut": "You successfully logged out!"
+    },
+    "user": {
+        "fields": {
+            "username": "Username",
+            "email": "Email",
+            "role": "Role"
+        }
+    },
+    "publication": {
+        "createFields": {
+            "publicationType": "Type",
+            "originalTitle": "Original Title",
+            "yearPublished": "Year Published",
+            "publisherData": "Publisher Data",
+            "identifier": "ISBN/ISSN/DOI",
+            "primaryReferenceLocation": "Referenced in Web of Science and/or Scopus",
+            "secondaryReferenceLocation": "Referenced in OTHERS (for 4.6) in accordance with the rules",
+            "tertiaryReferenceLocation": "Referenced in OTHERS by the list of НАЦИД",
+            "authorsAndCoAuthors": "Co-authors without titles (all co-authors, ordered as in the publication, including yourself)",
+            "studentsAndDoctorants": "Names of students or doctorants among the co-authors",
+            "isiImpactFactor": "ISI impact factor",
+            "sjrScopusImpactRank": "SJR SCOPUS IMPACT RANK",
+            "publicationLanguageCode": "Language of the publication",
+            "publicationLink": "Link to online publication"
+        },
+        "fields": {
+            "publicationType": "Type",
+            "originalTitle": "Original Title",
+            "yearPublished": "Year Published",
+            "publisherData": "Publisher Data",
+            "identifier": "ISBN/ISSN/DOI",
+            "primaryReferenceLocation": "Referenced in Web of Science and/or Scopus",
+            "secondaryReferenceLocation": "Referenced in OTHERS (for 4.6) in accordance with the rules",
+            "tertiaryReferenceLocation": "Referenced in OTHERS by the list of НАЦИД",
+            "authorsAndCoAuthors": "Co-authors without titles",
+            "studentsAndDoctorants": "Students or doctorants",
+            "isiImpactFactor": "ISI impact factor",
+            "sjrScopusImpactRank": "SJR SCOPUS IMPACT RANK",
+            "publicationLanguageCode": "Language of the publication",
+            "publicationLink": "Link to online publication",
+            "bibliographyDescription": "Bibliography description"
+        },
+        "validation": {
+            "typeNotSupported": "The type '{0}' is currently not supported.",
+            "yearPublishedInvalidRange": "The field '{0}' should be between 1970 and {1}",
+            "invalidNamesFormatting": "The names in '{0}' are incorrectly formatted.",
+            "alreadyExists": "A publication with this title already exists and will be overwritten."
+        },
+        "modal": {
+            "alreadyExists": "A publication with this title already exists and will be overwritten if you proceed. Would you like to proceed?",
+            "alreadyExistsImport": "The data that is going to be imported contains publications with titles which already exists and will be overwritten if you proceed. Would you like to proceed?"
+        }
+    },
+    "validation": {
+        "required": "The field '{0}' is required.",
+        "invalidEmail": "The provided email address is not valid.",
+        "invalidUsername": "The field '{0}' should contain latic letters and numbers without spaces."
+    },
+    "ExceptionType": {
+        "Unknown": "An unknown error occurred.",
+        "ValidationFailed": "A validation error occured.",
+        "UserWithEmailAlreadyExists": "An user with the specified email already exists.",
+        "UserCreationFailure": "An error occured while creating the user.",
+        "RoleNotFound": "The specified role was not found.",
+        "UnsupportedPublicationType": "This publication type is currently unsupported."
+    }
+}

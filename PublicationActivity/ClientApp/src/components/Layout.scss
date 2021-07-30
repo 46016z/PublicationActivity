@@ -1,0 +1,37 @@
+html,
+body,
+#root,
+#root > div:first-child,
+.main-container {
+    height: 100%;
+}
+
+.navigation-container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.main-container {
+    padding: 0 15px 15px 15px;
+
+    > .centered-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+#root > div:first-child {
+    display: flex;
+    flex-direction: column;
+
+    > header {
+        flex: 0 1 auto;
+    }
+
+    > .main-container {
+        flex: 1 1 auto;
+    }
+}

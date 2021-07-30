@@ -1,0 +1,50 @@
+/* Provide sufficient contrast against white background */
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-tabs {
+  border: none;
+
+  >.nav-item {
+    margin: 2px 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    >.nav-link {
+      border-radius: 0.25rem;
+
+      &:not(.active):hover {
+        background-color: #e9ecef;
+      }
+
+      &.active {
+        background-color: #007bff;
+        color: #ffffff;
+
+        &:hover {
+          background-color:  #1b6ec2;
+        }
+      }
+    }
+  }
+}
+
+.language-dropdown {
+  &:hover {
+    cursor: pointer;
+  }
+}
