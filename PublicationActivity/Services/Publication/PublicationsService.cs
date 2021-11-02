@@ -69,7 +69,7 @@ namespace PublicationActivity.Services
 
             if (!string.IsNullOrEmpty(publicationDto.OriginalTitle))
             {
-                publicationsQuery = publicationsQuery.Where(b => b.OriginalTitle.Contains(publicationDto.OriginalTitle));
+                publicationsQuery = publicationsQuery.Where(b => EF.Functions.Like(b.OriginalTitle, $"%{publicationDto.OriginalTitle}%"));
             }
 
             if (publicationDto.YearPublished != 0)
@@ -79,12 +79,12 @@ namespace PublicationActivity.Services
 
             if (!string.IsNullOrEmpty(publicationDto.PublisherData))
             {
-                publicationsQuery = publicationsQuery.Where(b => b.PublisherData.Contains(publicationDto.PublisherData));
+                publicationsQuery = publicationsQuery.Where(b => EF.Functions.Like(b.PublisherData, $"%{publicationDto.PublisherData}%"));
             }
 
             if (!string.IsNullOrEmpty(publicationDto.Identifier))
             {
-                publicationsQuery = publicationsQuery.Where(b => b.Identifier.Contains(publicationDto.Identifier));
+                publicationsQuery = publicationsQuery.Where(b => EF.Functions.Like(b.Identifier, $"%{publicationDto.Identifier}%"));
             }
 
             if (!string.IsNullOrEmpty(publicationDto.PrimaryReferenceLocation))
@@ -135,7 +135,7 @@ namespace PublicationActivity.Services
 
             if (!string.IsNullOrEmpty(publicationDto.PublicationLink))
             {
-                publicationsQuery = publicationsQuery.Where(b => b.PublicationLink.Contains(publicationDto.PublicationLink));
+                publicationsQuery = publicationsQuery.Where(b => EF.Functions.Like(b.PublicationLink, $"%{publicationDto.PublicationLink}%"));
             }
 
             return await publicationsQuery
