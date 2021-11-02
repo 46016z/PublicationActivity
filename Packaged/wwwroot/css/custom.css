@@ -1,0 +1,9 @@
+﻿.navigation-container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.main-container {
+    padding: 0 15px 15px 15px;
+}
