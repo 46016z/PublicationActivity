@@ -29,11 +29,7 @@ namespace PublicationActivity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection"), x =>
-                    {
-                        x.EnableRetryOnFailure(5);
-                    }));
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 

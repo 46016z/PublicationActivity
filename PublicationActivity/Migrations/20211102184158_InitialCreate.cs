@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PublicationActivity.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,10 +11,10 @@ namespace PublicationActivity.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -25,21 +25,21 @@ namespace PublicationActivity.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
+                    PasswordHash = table.Column<string>(type: "TEXT", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "TEXT", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "TEXT", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "INTEGER", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "INTEGER", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,11 +50,11 @@ namespace PublicationActivity.Migrations
                 name: "Contributors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(450)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    LastName = table.Column<string>(type: "nvarchar(450)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    IsStudentOrDoctorant = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    LastName = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    IsStudentOrDoctorant = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,15 +65,15 @@ namespace PublicationActivity.Migrations
                 name: "DeviceCodes",
                 columns: table => new
                 {
-                    UserCode = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    DeviceCode = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    SubjectId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    SessionId = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    ClientId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Expiration = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Data = table.Column<string>(type: "nvarchar(max)", maxLength: 50000, nullable: false)
+                    UserCode = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    DeviceCode = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    SubjectId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    SessionId = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Data = table.Column<string>(type: "TEXT", maxLength: 50000, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -84,16 +84,16 @@ namespace PublicationActivity.Migrations
                 name: "PersistedGrants",
                 columns: table => new
                 {
-                    Key = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    SubjectId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    SessionId = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    ClientId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Expiration = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ConsumedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Data = table.Column<string>(type: "nvarchar(max)", maxLength: 50000, nullable: false)
+                    Key = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    Type = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    SubjectId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    SessionId = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ConsumedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    Data = table.Column<string>(type: "TEXT", maxLength: 50000, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,9 +104,9 @@ namespace PublicationActivity.Migrations
                 name: "PrimaryReferenceLocations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -117,10 +117,10 @@ namespace PublicationActivity.Migrations
                 name: "PublicationTypes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Supported = table.Column<bool>(type: "bit", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Supported = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -131,9 +131,9 @@ namespace PublicationActivity.Migrations
                 name: "SecondaryReferenceLocations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -144,11 +144,11 @@ namespace PublicationActivity.Migrations
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    RoleId = table.Column<string>(type: "TEXT", nullable: false),
+                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -165,11 +165,11 @@ namespace PublicationActivity.Migrations
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    ClaimType = table.Column<string>(type: "TEXT", nullable: true),
+                    ClaimValue = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -186,10 +186,10 @@ namespace PublicationActivity.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    LoginProvider = table.Column<string>(type: "TEXT", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "TEXT", maxLength: 128, nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "TEXT", nullable: true),
+                    UserId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -206,8 +206,8 @@ namespace PublicationActivity.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    RoleId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -230,10 +230,10 @@ namespace PublicationActivity.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    UserId = table.Column<string>(type: "TEXT", nullable: false),
+                    LoginProvider = table.Column<string>(type: "TEXT", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 128, nullable: false),
+                    Value = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -250,21 +250,21 @@ namespace PublicationActivity.Migrations
                 name: "Publications",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PublicationTypeId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    OriginalTitle = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    YearPublished = table.Column<int>(type: "int", nullable: false),
-                    PublisherData = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    Identifier = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    PrimaryReferenceLocationId = table.Column<int>(type: "int", nullable: true),
-                    SecondaryReferenceLocationId = table.Column<int>(type: "int", nullable: true),
-                    TertiaryReferenceLocation = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    IsiImpactFactor = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    SjrScopusImpactRank = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    PublicationLanguageCode = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    PublicationLink = table.Column<string>(type: "nvarchar(max)", nullable: true, collation: "SQL_Latin1_General_CP1_CI_AS")
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PublicationTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserId = table.Column<string>(type: "TEXT", nullable: true),
+                    OriginalTitle = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    YearPublished = table.Column<int>(type: "INTEGER", nullable: false),
+                    PublisherData = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    Identifier = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    PrimaryReferenceLocationId = table.Column<int>(type: "INTEGER", nullable: true),
+                    SecondaryReferenceLocationId = table.Column<int>(type: "INTEGER", nullable: true),
+                    TertiaryReferenceLocation = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    IsiImpactFactor = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    SjrScopusImpactRank = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    PublicationLanguageCode = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE"),
+                    PublicationLink = table.Column<string>(type: "TEXT", nullable: true, collation: "NOCASE")
                 },
                 constraints: table =>
                 {
@@ -299,9 +299,9 @@ namespace PublicationActivity.Migrations
                 name: "ContributorPublications",
                 columns: table => new
                 {
-                    ContributorId = table.Column<int>(type: "int", nullable: false),
-                    PublicationId = table.Column<int>(type: "int", nullable: false),
-                    Order = table.Column<int>(type: "int", nullable: false)
+                    ContributorId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PublicationId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Order = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -323,41 +323,92 @@ namespace PublicationActivity.Migrations
             migrationBuilder.InsertData(
                 table: "PrimaryReferenceLocations",
                 columns: new[] { "Id", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Web of Science" },
-                    { 2, "Scopus" },
-                    { 3, "Web of Science и Scopus" }
-                });
+                values: new object[] { 1, "Web of Science" });
+
+            migrationBuilder.InsertData(
+                table: "PrimaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 2, "Scopus" });
+
+            migrationBuilder.InsertData(
+                table: "PrimaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 3, "Web of Science и Scopus" });
 
             migrationBuilder.InsertData(
                 table: "PublicationTypes",
                 columns: new[] { "Id", "Name", "Supported" },
-                values: new object[,]
-                {
-                    { 10, "Патент", false },
-                    { 9, "Речник", false },
-                    { 8, "Студия", false },
-                    { 7, "Глава от колективна монография", false },
-                    { 6, "Монография", true },
-                    { 4, "Учебник", false },
-                    { 3, "Книга", true },
-                    { 2, "Статия в списания и поредици", true },
-                    { 1, "Доклад от конференция", true },
-                    { 5, "Учебно пособие", false }
-                });
+                values: new object[] { 10, "Патент", false });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 9, "Речник", false });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 8, "Студия", false });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 7, "Глава от колективна монография", false });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 6, "Монография", true });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 4, "Учебник", false });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 3, "Книга", true });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 2, "Статия в списания и поредици", true });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 1, "Доклад от конференция", true });
+
+            migrationBuilder.InsertData(
+                table: "PublicationTypes",
+                columns: new[] { "Id", "Name", "Supported" },
+                values: new object[] { 5, "Учебно пособие", false });
 
             migrationBuilder.InsertData(
                 table: "SecondaryReferenceLocations",
                 columns: new[] { "Id", "Name" },
-                values: new object[,]
-                {
-                    { 4, "IEEE Xplore" },
-                    { 1, "Zentralblatt" },
-                    { 2, "MathSciNet" },
-                    { 3, "ACM Digital Library" },
-                    { 5, "AIS eLibrary" }
-                });
+                values: new object[] { 4, "IEEE Xplore" });
+
+            migrationBuilder.InsertData(
+                table: "SecondaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 1, "Zentralblatt" });
+
+            migrationBuilder.InsertData(
+                table: "SecondaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 2, "MathSciNet" });
+
+            migrationBuilder.InsertData(
+                table: "SecondaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 3, "ACM Digital Library" });
+
+            migrationBuilder.InsertData(
+                table: "SecondaryReferenceLocations",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 5, "AIS eLibrary" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -368,8 +419,7 @@ namespace PublicationActivity.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true,
-                filter: "[NormalizedName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -395,8 +445,7 @@ namespace PublicationActivity.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true,
-                filter: "[NormalizedUserName] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ContributorPublications_PublicationId",

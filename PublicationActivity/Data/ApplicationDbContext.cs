@@ -32,37 +32,37 @@ namespace PublicationActivity.Data
             builder.Entity<Publication>(p =>
             {
                 p.Property<string>("Identifier")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("IsiImpactFactor")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("OriginalTitle")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("PublicationLanguageCode")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("PublicationLink")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("PublisherData")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("SjrScopusImpactRank")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("TertiaryReferenceLocation")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
             });
 
             builder.Entity<Contributor>(p =>
             {
                 p.Property<string>("FirstName")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
 
                 p.Property<string>("LastName")
-                    .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                    .UseCollation("NOCASE");
             });
 
             builder.Entity<ContributorPublication>(c =>
